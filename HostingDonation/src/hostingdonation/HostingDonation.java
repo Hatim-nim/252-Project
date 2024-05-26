@@ -56,7 +56,8 @@ public class HostingDonation {
             if (isAdmin) { // if the user was admin, he could see the following choices (3 & 4)
                 System.out.println("3. Modify App");
                 System.out.println("4. Delete App");
-                System.out.println("5. Return to Main Menu");
+                System.out.println("5. Write all apps into txt");
+                System.out.println("6. Return to Main Menu");
             System.out.println("-------------------------------");
             System.out.println("*********************************");    
             System.out.println("");                
@@ -87,7 +88,12 @@ public class HostingDonation {
                     }
                     break;
                 case 5:
-                    return;
+                if (isAdmin) {
+                    writeAllApps();
+                }
+                case 6:
+                return;
+
                 default:
                     System.out.println("Please try again.");
             }
@@ -175,6 +181,18 @@ public class HostingDonation {
             }
         }
     }
+
+    private static void writeAllApps() {
+        if (apps.isEmpty()) { // if theres no apps, print out the following
+            System.out.println("No apps created yet.");
+        } else {
+            proxyWriteTXT writeApps= new proxyWriteTXT();
+            for (App app : apps) { // print out all the apps
+                writeApps.write(app.toString());
+            }
+        }
+    }
+
     // method that return a new donator object
     private static void createDonator() {
         System.out.print("Enter donator name: ");
