@@ -11,6 +11,7 @@ import java.util.List;
 public class App implements Observable{
         private List<Observer> observers = new ArrayList<>();
     private String name;
+    private State currentState;
     private double amountNeeded;
     private double totalCollected = 0;
     private FundingStrategy fundingStrategy; // chosen later on
@@ -20,6 +21,7 @@ public class App implements Observable{
         this.name = name;
         this.amountNeeded = amountNeeded;
         this.fundingStrategy = new StandardFundingStrategy(); // forced standard unless someone wants to change it
+        this.currentState = new PendingState();  // Default initial state
     }
     
     @Override
@@ -45,6 +47,7 @@ public class App implements Observable{
         checkFundingStatus();
         // The following line is part of the Observer pattern
         notifyObservers(amount);  // Notify observers when a donation is made
+        currentState.handleFunding(this);  // Delegate to current state
     }
 
     // Check funding status using the fixed strategy.
@@ -60,6 +63,12 @@ public class App implements Observable{
     public void setFundingStrategy(FundingStrategy strategy) {
         this.fundingStrategy = strategy;
     }
+
+    public void setState(State newState) {
+        this.currentState = newState;  // Set the new state
+    }
+
+    
     
         public String getName() {
         return name;
