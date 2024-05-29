@@ -231,7 +231,12 @@ public class HostingDonation {
         double amount = scanner.nextDouble();
         scanner.nextLine(); // consume newline
         if (amount > 0) {
-            donator.donate(app, amount);
+            Donation newDonation = new Donation(donator, amount, app);  // Create the base Donation
+            newDonation = new RewardDonation(newDonation);  // Wrap with reward decorator
+            newDonation = new SpecialThanksDonation(newDonation);  // Wrap with special thanks decorator
+            donator.donate(app, amount);  // Process the original donation
+            System.out.println("Donation successful: " + newDonation.getDetails());
+            
         } else {
             System.out.println("Invalid donation amount.");
         }
