@@ -42,5 +42,11 @@ public class Donation {
                ", date=" + date +
                '}';
     }
+
+    public String getDetails() {
+        return donator.getName() + " donated $" + amount + " to " + app.getName();
+    }
+
+
 }
 
