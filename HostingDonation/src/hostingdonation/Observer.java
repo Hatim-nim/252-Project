@@ -3,7 +3,7 @@ package hostingdonation;
 
 
 public interface Observer {
-        // Called when the Observable (subject) has updates
+        // Called when the Observable has updates
     void update(Observable o, Object arg);
     
 }

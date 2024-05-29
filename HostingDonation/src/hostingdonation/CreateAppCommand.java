@@ -18,7 +18,7 @@ public class CreateAppCommand implements Command {
 
     // Create a new app and add it to the list
     @Override
-    public void execute() {
+    public void execute() { // we're making use of the creation of the app by making it a command.
         App app = appFactory.createApp(name, amountNeeded);
         apps.add(app);
         System.out.println("App created: " + app.getName());

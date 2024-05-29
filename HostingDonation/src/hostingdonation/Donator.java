@@ -16,7 +16,7 @@ public class Donator {
     // Method to make a donation to an app
     public void donate(App app, double amount) {
         if (amount > 0) {
-            Donation donation = new Donation(this, amount, app);
+            Donation donation = new Donation(this, amount, app); // new donation object
             donations.add(donation);
             app.addDonation(amount);
             System.out.println("Donated " + amount + " to " + app.getName());
@@ -48,6 +48,6 @@ public class Donator {
     
     
     public List<Donation> getDonations() {
-        return donations;
+        return donations; // return a list of donations
     }
 }

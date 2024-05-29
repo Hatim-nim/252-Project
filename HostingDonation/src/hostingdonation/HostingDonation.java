@@ -328,7 +328,7 @@ private static void changeFundingStrategy(App app) {
         System.out.println("App not found.");
     }
 }
-    // method 
+    // method that modifies info of donator if found
     private static void modifyDonator() {
     System.out.print("Enter the name of the donator to modify: ");
     String name = scanner.next();

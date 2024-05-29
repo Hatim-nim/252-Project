@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hostingdonation;
 
 import java.util.ArrayList;
@@ -16,7 +12,7 @@ public class App implements Observable{
     private double totalCollected = 0;
     private FundingStrategy fundingStrategy; // chosen later on
 
-    // Constructor no longer requires a funding strategy as a parameter.
+    // Constructor no longer requires a funding strategy as a parameter
     public App(String name, double amountNeeded) {
         this.name = name;
         this.amountNeeded = amountNeeded;
@@ -41,7 +37,7 @@ public class App implements Observable{
         }
     }
 
-    // Method to add donations to the total collected amount.
+    // Method to add donations to the total collected amount
     public void addDonation(double amount) {
         totalCollected += amount;
         checkFundingStatus();

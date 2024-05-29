@@ -11,7 +11,7 @@ public class RewardDonation extends Donation {
      // Override the getDetails method to add reward points information
      @Override
      public String getDetails() {
-         // Calls the base class getDetails method and appends the reward points message
+         // Calls the base class getDetails method and "appends" the reward points message
          return originalDonation.getDetails() + " and earned 10 reward points :)";
      }
 }

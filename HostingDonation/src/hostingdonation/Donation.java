@@ -43,7 +43,7 @@ public class Donation {
                '}';
     }
 
-    public String getDetails() {
+    public String getDetails() { // print info of donation
         return donator.getName() + " donated $" + amount + " to " + app.getName();
     }
 

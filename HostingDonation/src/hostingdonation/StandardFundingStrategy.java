@@ -5,6 +5,6 @@ package hostingdonation;
 public class StandardFundingStrategy implements FundingStrategy {
     @Override
     public boolean isFundingComplete(double collected, double needed) {
-        return collected >= needed;
+        return collected >= needed; //return T or F
     }
 }

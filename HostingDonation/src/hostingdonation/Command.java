@@ -4,6 +4,6 @@ package hostingdonation;
 
 public interface Command {
     // Execute the command
-    void execute();
+    void execute(); // executed in CreateAppCommand & ModifyAppCommand classes.
 }
 

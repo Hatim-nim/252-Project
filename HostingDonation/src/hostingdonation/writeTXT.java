@@ -11,7 +11,7 @@ public class writeTXT implements FileOperations {
     public void read() {
         try{
       open();
-      System.out.println("Reading from file: ");
+      System.out.println("  Reading from file:   ");
         Scanner read= new Scanner(file);
         while(read.hasNextLine()){
             System.out.println(read.nextLine());
@@ -26,9 +26,9 @@ public class writeTXT implements FileOperations {
     public void write(String content) {
     try{
       open();
-      System.out.println("Writing to file:   : " + content);
+      System.out.println("  Writing to file:   : " + content);
       FileWriter fileWrite= new FileWriter(file,true);
-      fileWrite.write(content+"\n");
+      fileWrite.write(content+"\n  "); // writing the records to a text file
       fileWrite.close();
     }catch(IOException e){
         System.out.println(e.getMessage());
