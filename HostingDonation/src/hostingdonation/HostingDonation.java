@@ -15,9 +15,9 @@ public class HostingDonation {
     public static void main(String[] args) {
         System.out.print("Are you an Admin? (yes/no): ");
         String adminResponse = scanner.nextLine().trim().toLowerCase(); // decide the user
-        isAdmin = "yes".equals(adminResponse); // if he was admin then save it
-
+        isAdmin = "yes".equals(adminResponse); // if he was admin then save it    
         while (true) {
+            if(adminResponse.equals("no") || (adminResponse.equals("yes"))){
             System.out.println("*********************************");
             System.out.println("\n--------- Main Menu ---------");
             System.out.println("1. Manage Apps");
@@ -43,7 +43,14 @@ public class HostingDonation {
                 default:
                     System.out.println("Please try again."); // if any other choice chosen
             }
-        }
+        }else{
+            System.out.println("please enter yes or no");
+            System.out.print("Are you an Admin? (yes/no): ");
+            adminResponse = scanner.nextLine().trim().toLowerCase(); // decide the user
+            isAdmin = "yes".equals(adminResponse); // if he was admin then save it    
+
+        }}
+        
     }
     // this method manages all related matters with apps
     private static void manageApps() { 
