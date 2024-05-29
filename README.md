@@ -1,76 +1,75 @@
-# 252-Project
-An app that signs new apps and make people donate to them in order to guarantee next hosting payment.
+# HostingDonations (CPIT 252)
 
-Donation Management System
+## Description
+HostingDonations, also known as a Donation Management System, is designed to manage donations for app hosting. This system enables users to register new apps and encourage people to donate to them, ensuring these apps can afford their next hosting period.
 
-This repository contains the implementation of a Donation Management System designed to manage donations for app hosting. The system is built with Java and utilizes several design patterns to structure the code effectively, ensuring that the application is maintainable, scalable, and flexible.
-Design Patterns Used
-1. Singleton Pattern
+## Features
+- Register new applications to receive donations.
+- Facilitate and manage donations towards hosting fees.
+- Maintain consistent application operation through managed hosting fees.
 
-Purpose: Ensures that only one instance of the Admin class exists throughout the application. This pattern is crucial for managing centralized operations and maintaining consistent state across the system.
+## Design Patterns Used
+This project utilizes several well-known design patterns to improve code manageability and scalability:
 
-Implementation:
+### Singleton Pattern
+- **Purpose**: Ensures that only one instance of the Admin class exists throughout the application.
+- **Implementation**: The `Admin` class uses a private constructor and a static method to provide a global point of access to the single instance.
 
-    The Admin class uses a private constructor and a static method to provide a global point of access to the single instance.
+### Factory Pattern
+- **Purpose**: Simplifies the object creation process for creating instances of `App` and `Donator`.
+- **Implementation**: `AppFactory` and `DonatorFactory` are utilized to create instances, decoupling the creation process from the business logic.
 
-2. Factory Pattern
+### Strategy Pattern
+- **Purpose**: Allows the behavior of the application, specifically how funding status is checked, to be selected at runtime.
+- **Implementation**: `App` objects dynamically change their funding check strategy, facilitating the use of different criteria to determine if funding is complete.
 
-Purpose: Simplifies the object creation process, particularly for creating instances of App and Donator. It centralizes the creation logic to one location, making the process more manageable and consistent.
+### Observer Pattern
+- **Purpose**: Enables objects to receive updates about changes in other objects.
+- **Implementation**: The `App` class implements the `Observable` interface and notifies all registered observers when a donation is added.
 
-Implementation:
+### Command Pattern
+- **Purpose**: Encapsulates a request as an object, letting users parameterize clients with different requests.
+- **Implementation**: Commands such as `CreateAppCommand` and `ModifyAppConsoleCommand` encapsulate operation details and are executed as required.
 
-    AppFactory and DonatorFactory are used to create instances of App and Donator, respectively. This pattern helps decouple the construction of objects from the classes that use these objects.
+### Decorator Pattern
+- **Purpose**: Adds new functionality to an existing object without altering its structure.
+- **Implementation**: Donations can be wrapped with additional features like rewards and special thanks dynamically at runtime.
 
-3. Strategy Pattern
+### State Pattern
+- **Purpose**: Allows an object to alter its behavior when its internal state changes.
+- **Implementation**: The `App` class changes its behavior based on its hosting funding status.
 
-Purpose: Allows the behavior of the application to be selected at runtime. The App class uses this pattern to change the method by which funding status is checked.
+### Proxy Pattern
+- **Purpose**: Controls access to another object, performing tasks like security checks or logging before forwarding requests.
+- **Implementation**: The `ProxyWriteTXT` class performs authorization checks before delegating write operations to `RealWriteTXT`.
 
-Implementation:
+## Technologies
+- Visual Studio Code (VSCode)
+## Reference Used
+- Dr. Khalid's Software Design Patterns
+- Java Object-Oriented Programming (OOP)
+- GitHub for version control
+- [Refactoring Guru](https://refactoring.guru) for design pattern references
 
-    App objects can dynamically change their funding check strategy, allowing the use of different criteria to determine if funding is complete.
+## Installation
+```bash
+git clone https://github.com/Hatim-nim/252-Project.git
+cd 252-Project
+```
 
-4. Observer Pattern
+## contributors
 
-Purpose: Enables objects to receive updates about changes in other objects without being tightly coupled to them. This pattern is used in the system to notify interested parties (observers) when new donations are made.
+- Hamza Sebaih
+- Hatim Alharbi
+- Amr Mahmoud
+- Wael Alkiyani 
 
-Implementation:
-
-    The App class implements the Observable interface and notifies all registered observers when a donation is added.
-
-5. Command Pattern
-
-Purpose: Encapsulates a request as an object, thereby letting users parameterize clients with queues, requests, and operations. Useful for undoing operations or maintaining a history of actions.
-
-Implementation:
-
-    Commands such as CreateAppCommand and ModifyAppCommand encapsulate all details of these operations and are executed when required. This allows for easy addition of new commands without changing existing code.
-
-Getting Started
-
-To get a local copy up and running, follow these simple steps:
-
-bash
-
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-# Run your application
-java -jar YourApp.jar
-
-Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
-
-    Fork the Project
-    Create your Feature Branch (git checkout -b feature/AmazingFeature)
-    Commit your Changes (git commit -m 'Add some AmazingFeature')
-    Push to the Branch (git push origin feature/AmazingFeature)
-    Open a Pull Request
 
 License
 
-Distributed under the MIT License. See LICENSE for more information.
+This project is a college group project and does not currently include a specific license.
 Contact
 
-Your Name - @haisshin
+  
 
 Project Link: https://github.com/Hatim-nim/252-Project
