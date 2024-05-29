@@ -13,3 +13,9 @@ public interface Observable {
     void notifyObservers(Object arg);
     
 }
+
+
+
+
+
+
