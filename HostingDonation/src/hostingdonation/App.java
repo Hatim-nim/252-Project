@@ -96,7 +96,12 @@ public class App implements Observable{
                "name='" + name + '\'' +
                ", amountNeeded=" + amountNeeded +
                ", totalCollected=" + totalCollected +
+               ", State=" + currentState.getDescription() +
                '}';
+    }
+
+    public String getCurrentStateDescription() {
+        return currentState.getDescription();  // Return the current state description
     }
 }
 

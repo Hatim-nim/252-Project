@@ -177,7 +177,7 @@ public class HostingDonation {
             System.out.println("No apps created yet.");
         } else {
             for (App app : apps) { // print out all the apps
-                System.out.println(app);
+                System.out.println(app + " - Status: " + app.getCurrentStateDescription());
             }
         }
     }

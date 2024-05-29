@@ -7,5 +7,10 @@ public class PendingState implements State{
             context.setState(new FundedState());
             System.out.println(context.getName() + " is now fully funded.");
         }
-    } 
+    }
+    
+    @Override
+    public String getDescription() { // description for the pending state of the app
+        return "Pending Funding";
+    }
 }

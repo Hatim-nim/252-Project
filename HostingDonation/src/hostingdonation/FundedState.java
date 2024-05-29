@@ -5,4 +5,9 @@ public class FundedState implements State{
     public void handleFunding(App context) {
         System.out.println(context.getName() + " has reached its funding goal. No further donations needed.");
     }
+
+    @Override
+    public String getDescription() {
+        return "Fully Funded";
+    }
 }
